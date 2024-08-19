@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const craneRoutes = require('./api/routes/crane.routes');
+const userRoutes = require('./api/routes/user.routes');
 const { specs, swaggerUi } = require('./swagger');
 
 dotenv.config();
@@ -13,6 +14,8 @@ app.use(express.json());
 
 // Rutas de tratamiento de Gruas
 app.use('/api/gruas', craneRoutes);
+// Rutas de tratamiento de Usuarios
+app.use('/api/users', userRoutes);
 
 app.get('/', (req, res) => {
   res.send('API ejecutandose correctamente.');
