@@ -1,21 +1,21 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const EstadoOperativo = sequelize.define('EstadoOperativo', {
+const TipoMantenimiento = sequelize.define('TipoMantenimiento', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
-    field: 'est_id',
+    field: 'tip_id',
   },
   nombre: {
     type: DataTypes.STRING,
     allowNull: false,
-    field: 'est_nombre',
+    field: 'tip_nombre',
   },
 }, {
-  tableName: 'estados_operativos',
+  tableName: 'tipos_mantenimiento',
   timestamps: false,
 });
 
-module.exports = EstadoOperativo;
+module.exports = TipoMantenimiento;

@@ -1,21 +1,26 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const EstadoOperativo = sequelize.define('EstadoOperativo', {
+const Ruta = sequelize.define('Ruta', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
-    field: 'est_id',
+    field: 'rut_id',
   },
   nombre: {
     type: DataTypes.STRING,
     allowNull: false,
-    field: 'est_nombre',
+    field: 'rut_nombre',
+  },
+  descripcion: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    field: 'rut_descripcion',
   },
 }, {
-  tableName: 'estados_operativos',
+  tableName: 'rutas',
   timestamps: false,
 });
 
-module.exports = EstadoOperativo;
+module.exports = Ruta;

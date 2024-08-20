@@ -6,16 +6,16 @@ const TipoGrua = sequelize.define('TipoGrua', {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
-    field: 'tip_id', // Mapea a la columna "tip_id" en la base de datos
+    field: 'tip_id',
   },
   nombre: {
     type: DataTypes.STRING,
     allowNull: false,
-    field: 'tip_nombre', // Mapea a la columna "tip_nombre" en la base de datos
+    field: 'tip_nombre',
   },
 }, {
-  tableName: 'tipos_gruas', // Nombre de la tabla en la base de datos
-  timestamps: false, // Desactiva las columnas `createdAt` y `updatedAt`
+  tableName: 'tipos_gruas',
+  timestamps: false,
 });
 
 module.exports = TipoGrua;
