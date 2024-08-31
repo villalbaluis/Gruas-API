@@ -4,6 +4,7 @@ const craneRoutes = require('./api/routes/crane.routes');
 const userRoutes = require('./api/routes/user.routes');
 const { specs, swaggerUi } = require('./swagger');
 const { apiTokenMiddleware } = require('./api/middlewares/auth.middleware');
+const cors = require('cors')
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ const app = express();
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use(express.json());
+app.use(cors());
 
 // Aplica el middleware de token de API a todas las rutas
 app.use(apiTokenMiddleware);
